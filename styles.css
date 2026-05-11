@@ -1,3 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0c0c10;
+  --border: #1c1c26;
+  --text: #eaeaf4;
+  --text-body: #9090aa;
+  --text-muted: #50506a;
+  --blue: #43a2d2;
+  --green: #a8d428;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text-body);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── Nav ─────────────────────────────────────── */
+
+nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 1.1rem 2rem;
+  background: rgba(12, 12, 16, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+nav a {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--blue);
+}
+
+/* ── Hero ────────────────────────────────────── */
+
+.wrapper {
+  position: relative;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 6rem 4rem;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 70% 60% at 90% 15%,
+      rgba(67, 162, 210, 0.12) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 50% 40% at 10% 90%,
+      rgba(168, 212, 40, 0.07) 0%,
+      transparent 70%
+    );
+  pointer-events: none;
+}
+
+.tag {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+h1 {
+  font-size: clamp(4rem, 8.5vw, 9.5rem);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  position: relative;
+}
+
 .blue {
-  color: #43a2d2;
+  color: var(--blue);
+}
+
+/* ── Meta grid ───────────────────────────────── */
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 4rem;
+  padding: 3rem 6rem 5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.value {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* ── Sections ────────────────────────────────── */
+
+section {
+  padding: 5rem 6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+section h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 2rem;
+}
+
+section p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--text-body);
+  max-width: 740px;
+  margin-bottom: 1.4rem;
+}
+
+section p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Footer ──────────────────────────────────── */
+
+footer {
+  padding: 2.5rem 6rem;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+/* ── Responsive ──────────────────────────────── */
+
+@media (max-width: 768px) {
+  nav {
+    gap: 1.25rem;
+    padding: 0.9rem 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    padding: 7rem 2rem 3rem;
+  }
+
+  .meta {
+    padding: 2.5rem 2rem 3.5rem;
+    gap: 1.75rem 2.5rem;
+  }
+
+  section {
+    padding: 3.5rem 2rem;
+  }
+
+  footer {
+    padding: 2rem;
+  }
 }
